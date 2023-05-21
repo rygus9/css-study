@@ -1,0 +1,17 @@
+{
+  "name": "css-study",
+  "version": "1.0.0",
+  "description": "css 공부를 위한 간단한 프로젝트",
+  "scripts": {
+    "start": "browser-sync src --watch --directory",
+    "serve": "serve src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
