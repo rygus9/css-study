@@ -148,35 +148,28 @@ h6 code {
 
 h1 {
   padding-bottom: 0.3em;
-  font-size: 2.2em;
-  line-height: 1.3;
-  color: var(--light-trait-100);
-}
-
-h2 {
-  padding-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225;
   color: var(--light-trait-200);
 }
 
-h3 {
+h2 {
   font-size: 1.4em;
   line-height: 1.43;
   color: var(--light-trait-300);
 }
 
-h4 {
+h3 {
   font-size: 1.2em;
   color: var(--light-trait-400);
 }
 
-h5 {
+h4 {
   font-size: 1em;
   color: var(--light-trait-400);
 }
 
-h6 {
+h5 {
   font-size: 1em;
   color: var(--light-trait-400);
 }
