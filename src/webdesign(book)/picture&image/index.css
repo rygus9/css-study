@@ -6,17 +6,219 @@
   background-color: #f5f5f5;
 }
 
-.box > img {
+.box img {
   /* 이미지는 인라인 요소로 간주됩니다. */
   display: block;
   width: 100%;
   height: 100%;
   max-width: 420px;
-  margin: 0 auto;
 }
 
-.example01 {
+.example01>img {
   position: relative;
   top: -8px;
   box-shadow: 15px 15px 0 #ed8787;
+}
+
+.example02>.pic {
+  position: absolute;
+}
+
+.example02>.pic::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 15px;
+  left: 15px;
+  background-image: repeating-linear-gradient(-45deg,
+      #d34e23 0px,
+      #d34e23 2px,
+      rgba(0 0 0 / 0) 0%,
+      rgba(0 0 0 / 0) 1%);
+}
+
+.example02>.pic img {
+  position: relative;
+  z-index: 2;
+}
+
+.example03>.pic {
+  position: absolute;
+}
+
+.example03>.pic img {
+  position: relative;
+  z-index: 2;
+}
+
+.example03>.pic::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 20px;
+  top: 15px;
+  background-size: 10px 10px;
+  background-image: radial-gradient(#ea987e 40%, rgba(0 0 0 / 0) 41%);
+  background-position: right bottom;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+.example04>img {
+  filter: drop-shadow(10px 10px 4px rgba(45 45 45 / 0.3));
+}
+
+.example05>.pic {
+  position: absolute;
+}
+
+.example05>.pic::after {
+  content: " ";
+  position: absolute;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-image-source: repeating-linear-gradient(45deg,
+      #d59a3b 0px,
+      #d59a3b 2px,
+      rgba(0 0 0 / 0) 2px,
+      rgba(0 0 0 / 0) 7px);
+  border-image-slice: 20;
+  border-width: 20px;
+  border-image-repeat: round;
+  border-style: solid;
+}
+
+.example06>.pic {
+  position: absolute;
+}
+
+.example06>.pic::before,
+.example06>.pic::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+}
+
+.example06>.pic::before {
+  top: -10px;
+  right: -10px;
+  border-top: 30px solid #ea987e;
+  border-right: 30px solid #ea987e;
+  border-left: 30px solid rgba(0 0 0 / 0);
+  border-bottom: 30px solid rgba(0 0 0 / 0);
+}
+
+.example06>.pic::after {
+  bottom: -10px;
+  left: -10px;
+  border-top: 30px solid rgba(0 0 0 / 0);
+  border-right: 30px solid rgba(0 0 0 / 0);
+  border-left: 30px solid #ea987e;
+  border-bottom: 30px solid #ea987e;
+}
+
+.example07>.pic {
+  position: absolute;
+}
+
+.example07>.pic::before,
+.example07>.pic::after {
+  content: "";
+  position: absolute;
+  transform: rotate(-35deg);
+  width: 70px;
+  height: 25px;
+  background-color: #f5f5f5;
+}
+
+.example07>.pic::before {
+  top: -10px;
+  left: -25px;
+  border-bottom: 1px solid #aaa;
+  border-top-right-radius: 50%;
+}
+
+.example07>.pic::after {
+  bottom: -10px;
+  right: -25px;
+  border-top: 1px solid #aaa;
+}
+
+.example08 img {
+  mix-blend-mode: multiply;
+}
+
+.example08>.logo-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/street.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.example08>.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example09>.pic {
+  position: absolute;
+}
+
+.example09>.pic::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(-45deg,
+      rgba(186 186 186 / .6) 0px, rgba(186 186 186 / .6) 1px,
+      rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 50%);
+  background-size: 6px 6px;
+  background-repeat: repeat;
+}
+
+.example10>.pic {
+  position: absolute;
+}
+
+.example10>.pic::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(186 186 186 / .8) 30%, rgba(0 0 0 / 0) 31%);
+  background-size: 6px 6px;
+  background-repeat: repeat;
+}
+
+.example11 img {
+  filter: blur(2px) sepia(100%)
+}
+
+.example12 img {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.example13 .backgroundclip {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: url("/images/cat.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 800px;
+  color: rgba(0 0 0 / 0);
+  font-size: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
