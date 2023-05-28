@@ -1,0 +1,399 @@
+.box {
+  position: relative;
+  width: 80%;
+  height: fit-content;
+  padding: 20px 40px;
+  margin: 0 auto;
+}
+
+.box h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.example01>.heading {
+  position: relative;
+  padding-bottom: 12px;
+  width: 100%;
+  font-size: 26px;
+  border-bottom: 5px solid #c7c7c7;
+}
+
+.example01>.heading::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 70px;
+  height: 5px;
+  background-color: #e5c046;
+}
+
+.example02>.heading {
+  font-size: 26px;
+  padding-bottom: 12px;
+  background-image: repeating-linear-gradient(90deg,
+      #c7c7c7 0%, #c7c7c7 45%,
+      #e5c046 45%, #e5c046 55%,
+      #c7c7c7 55%, #c7c7c7 100%);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.example03>.heading {
+  width: fit-content;
+  padding: 0 45px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.example03>.heading::before,
+.example03>.heading::after {
+  content: " ";
+  width: 30px;
+  height: 3px;
+  background-color: #e5c046;
+  position: absolute;
+}
+
+.example03>.heading::before {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 30px;
+}
+
+.example03>.heading::after {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 30px;
+}
+
+.example04>.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.example04>.heading::before,
+.example04>.heading::after {
+  content: '';
+  width: 3px;
+  height: 40px;
+  background-color: #e5c046;
+}
+
+.example04>.heading::before {
+  margin-right: 30px;
+  transform: rotate(-35deg);
+}
+
+.example04>.heading::after {
+  margin-left: 30px;
+  transform: rotate(35deg);
+}
+
+.example05>.heading {
+  position: relative;
+  font-size: 28px;
+}
+
+.example05>.heading::before {
+  content: attr(data-en);
+  position: absolute;
+  transform: rotate(-5deg);
+  top: -20px;
+  left: -30px;
+  color: #e5c046;
+  font-size: 60px;
+  font-weight: 400;
+  font-family: fantasy;
+  z-index: -1;
+}
+
+.example06>.heading {
+  font-size: 26px;
+}
+
+.example06>.heading span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #e5c046;
+  font-size: 28px;
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.example06>.heading span::before {
+  content: '';
+  display: inline-block;
+  margin-right: 20px;
+  width: 40px;
+  height: 1px;
+  background-color: #e5c046;
+}
+
+.example07>.heading {
+  position: relative;
+  padding-bottom: 30px;
+  font-size: 26px;
+  text-align: center;
+  background-image: linear-gradient(90deg,
+      rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 35%,
+      #e5c046 35%, #e5c046 65%,
+      rgba(0 0 0 / 0) 65%, rgba(0 0 0 / 0) 100%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+.example07>.heading::before {
+  content: attr(data-en);
+  display: block;
+  margin-bottom: 10px;
+  color: #e5c046;
+  font-size: 28px;
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.example08>.heading {
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 50px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.example08>.heading span {
+  position: relative;
+  z-index: 2;
+}
+
+.example08>.heading::before {
+  content: attr(data-en);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(299 192 70 / .3);
+  font-size: 60px;
+  font-style: italic;
+  z-index: 1;
+  font-family: Georgia, 'Times New Roman', Times, serif'
+
+}
+
+.example08>.heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%) rotate(30deg);
+  width: 1px;
+  height: 40px;
+  background-color: #e5c046;
+}
+
+.example09>.heading {
+  position: relative;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1;
+}
+
+.example09>.heading::before {
+  content: attr(data-number);
+  display: block;
+  margin-bottom: 50px;
+  color: #e5c046;
+  font-size: 32px;
+}
+
+.example09>.heading::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 20px;
+  background-color: #e5c046;
+}
+
+.example10>.heading {
+  position: relative;
+  padding-top: 10px;
+  font-size: 36px;
+  background-image: linear-gradient(90deg,
+      #e5c046 0%, #e5c046 30%,
+      rgba(0 0 0 / 0) 30%, rgba(0 0 0 / 0) 100%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.example10>.heading::before {
+  content: attr(data-number);
+  display: block;
+  margin-bottom: 20px;
+  color: #e5c046;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.example11>.heading {
+  position: relative;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  font-size: 26px;
+}
+
+.example11>.heading::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-bottom: 5px;
+  color: #e5c046;
+  font-size: 26px;
+  font-weight: 800;
+  border-bottom: 1px solid #e5c046;
+}
+
+.example12>.heading {
+  position: relative;
+  padding: 1.5em 1em 0.5em;
+  font-size: 28px;
+  border-bottom: 2px solid #e5c046;
+}
+
+.example12>.heading::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(229 192 70 / .4);
+  font-size: 68px;
+  font-weight: 800;
+  z-index: -1;
+}
+
+.example13>.heading {
+  padding: 0 2em 20px;
+  font-size: 26px;
+  background-image: repeating-linear-gradient(-45deg,
+      #e5c046 0px, #e5c046 2px,
+      rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 50%);
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+
+.example14>.heading {
+  padding: 0 2em 20px;
+  font-size: 26px;
+  background-image: repeating-linear-gradient(45deg,
+      #e5c046 0px, #e5c046 1px,
+      rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 50%),
+    repeating-linear-gradient(-45deg,
+      #e5c046 0px, #e5c046 1px,
+      rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 50%);
+  background-size: 8px 8px;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+
+.example15>.heading {
+  padding: 0 2em 20px;
+  font-size: 26px;
+  background-image: repeating-linear-gradient(90deg,
+      #e5c046 0px, #e5c046 12px,
+      rgba(0 0 0 / 0) 12px, rgba(0 0 0 / 0) 20px);
+  background-size: 20px 2px;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+
+.example16>.heading {
+  position: relative;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example16>.heading::before,
+.example16>.heading::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+}
+
+.example16>.heading::before {
+  margin: -50px 20px 0 0;
+  border-top: 15px solid #e5c046;
+  border-left: 15px solid #c4990a;
+}
+
+.example16>.heading::after {
+  margin: 0 0 -50px 20px;
+  border-right: 15px solid #c4990a;
+  border-bottom: 15px solid #e5c046;
+}
+
+.example17>.heading {
+  -webkit-text-stroke: 2px #555;
+  text-shadow: 5px 5px 0 #e5c046;
+  color: rgba(0 0 0 / 0);
+  font-size: 60px;
+}
+
+.example18>p {
+  font-size: 20px;
+}
+
+.example18 .mark {
+  background-image: linear-gradient(rgba(0 0 0 / 0) 70%, #e5c046 70%);
+}
+
+.example18 .dot {
+  text-emphasis: sesame #232323;
+  -webkit-text-emphasis: sesame #232323;
+}
+
+.example18 .circle {
+  text-emphasis: open circle #232323;
+  -webkit-text-emphasis: open circle #232323;
+}
+
+.example18 .wave {
+  text-decoration: #787878 wavy underline 2px;
+  -webkit-text-decoration: #787878 wavy underline 2px;
+}
+
+.example19 p {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  display: inline;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 2.2;
+  background-color: #e5c046;
+}
+
+.example20 p {
+  margin: 0 auto;
+  padding: 0 1.5em;
+  font-size: 28px;
+  line-height: 3;
+  background-image: repeating-linear-gradient(rgba(0 0 0 / 0) 0%, rgba(0 0 0 / 0) 98%,
+      #ccc 100%);
+  background-size: 100% 3em;
+  background-repeat: repeat;
+}
