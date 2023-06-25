@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Button</title>
+</head>
+
+<body>
+  <h1>버튼 디자인</h1>
+  <p>
+    기존까지는 디자인 하나에 제목 하나 달고 했지만 지금부터는 그냥 합니다.
+    왜냐하면 버튼 디자인이라 많은 공간이 필요없기도 하고 하나하나 설명할 이유도 못느끼기 때문입니다.
+    CSS를 어느정도 알고 있었기도 했고 많이 반복하면서 익숙해지기도 했습니다.
+  </p>
+  <p>
+    예제는 16개이지만 비슷해보이는거 자체 생략해서 8개를 구현하였다.
+    아이콘 대신 의사요소를 쓰는 코드가 거의 전부라서 그중 일부만 표현했다.
+    나는 애니메이션이나 그림자 이런거 기대했는데 아쉽다.
+  </p>
+  <blockquote>
+    배경을 두개 쓰는 경우 안에 요소를 span으로 가려주었는데 그 이유는 배경 겹침 문제라고 한다. <br>
+    원본이 z-index가 2이고 의사 요소가 z-index가 1이라고 하더라도 의사 요소가 배경을 덮는다. <br>
+    또다른 해결책으로는 의사 요소에만 z-index를 -1 해주는 것이다. (배경에 0주면 적용 안됩니다.)
+  </blockquote>
+  <blockquote>
+    top과 left의 기준점이 border 안쪽이라는거 알고 있자. <br>
+    box-sizing이 border-box가 아니라면 넓이를 제대로 구하기 위해서 calc를 써야한다.
+  </blockquote>
+  <blockquote>
+    border-image-slice는 border에 적용할 이미지를 어떻게 자를지를 결정한다. <br>
+    사진을 9개로 나눈 이후 모서리는 모서리 영역에 하나씩, 나머지는 대응되는 면에 반복해서 넣는다.
+  </blockquote>
+  <div class="box">
+    <a href="" class="example01"><span>환영합니다.</span></a>
+    <a href="" class="example02">환영합니다.</a>
+    <a href="" id="example03">환영합니다</a>
+    <a href="" class="example04">환영합니다.</a>
+    <a href="" class="example05">환영합니다.</a>
+    <a href="" class="example06">환영합니다.</a>
+    <a href="" class="example07">환영합니다.</a>
+    <a href="" class="example08"><span>환영합니다.</span></a>
+  </div>
+</body>
+
+</html>

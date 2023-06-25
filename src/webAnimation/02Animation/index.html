@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation</title>
+  <style>
+    .ball {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: blue;
+      animation: ball-ani 2s 3;
+    }
+
+    .ball:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes ball-ani {
+      0% {
+        transform: translateX(0) scale(1);
+        background: coral;
+
+      }
+
+      40% {
+        transform: translateX(100px) scale(0.8);
+      }
+
+      100% {
+        transform: translateX(200px) scale(1.5);
+        background: coral;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ball"></div>
+  <script>
+    const ball = document.querySelector('.ball')
+
+    ball.addEventListener('animationstart', (e) => {
+      console.log(`${e.animationName} START`)
+    })
+
+    ball.addEventListener('animationend', (e) => {
+      console.log(`${e.animationName} END`)
+    })
+
+    ball.addEventListener('animationiteration', (e) => {
+      console.log(`${e.animationName} ITERATION`)
+    })
+
+    ball.addEventListener('animationcancel', (e) => {
+      console.log(`${e.animationName} CANCEL`)
+    })
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Title & Text</title>
+</head>
+
+<body>
+  <header>
+    <h1>제목과 텍스트 디자인</h1>
+    <p>웹 콘텐츠 안에서 섹션을 나누는 제목이나 메시지 강조 등의 기법을 알려줍니다.</p>
+  </header>
+  <section>
+    <h2>01. 제목과 의사 요소로 두 가지 색의 선 꾸미기</h2>
+    <div class="box example01">
+      <h2 class="heading">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>02. 제목 + 선형 그레디언트로 두 가지 색 선 꾸미기</h2>
+    <blockquote>
+      선을 표현하려고 background-image를 쓰는게 맞나 싶지만 방법은 참신합니다. <br>
+      의사 요소를 한줄로 늘리고 거기서 background-image를 쓰는 것도 좋겠네요.
+    </blockquote>
+    <div class="box example02">
+      <h2 class="heading">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>03. 제목 양 옆을 선으로 꾸미기</h2>
+    <blockquote>
+      의사 요소의 display가 기본적으로 inline이다. + absolute시 저 값이 바뀐다를 알았다. <br>
+      책에서는 flex로 구현했는데 나는 max-width + auto margin로 중양에 두었다. (그냥)
+    </blockquote>
+    <div class="box example03">
+      <h2 class="heading">아무말 글짓기</h2>
+    </div>
+  </section>
+  <section>
+    <h2>04. 효과선으로 제목 꾸미기</h2>
+    <blockquote>
+      display가 flex일때는 따로 설정이 없어도 의사 요소가 보인다. <br>
+      flex가 안에 있는 요소를 조종하는 특별한 display여서 그런듯
+    </blockquote>
+    <div class="box example04">
+      <h2 class="heading">아무말 글짓기</h2>
+    </div>
+  </section>
+  <section>
+    <h2>05. 영어 필기체를 배경으로 제목 꾸미기</h2>
+    <div class="box example05">
+      <h2 class="heading" data-en="Recruit"><span>채용 정보에 관하여</span></h2>
+    </div>
+  </section>
+  <section>
+    <h2>06. 영문자와 가로 선으로 제목 꾸미기</h2>
+    <blockquote>
+      의사 요소가 대상 요소의 하위로 들어간다는걸 인지하지 못하고 있었다. (개발자 도구에도 그렇게 표현되고 있음에도...)
+    </blockquote>
+    <div class="box example06">
+      <h2 class="heading"><span>Recruit</span> 채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>07. 영문자와 밑줄로 제목 꾸미기</h2>
+    <blockquote>
+      data attribute를 css에서 사용가능한 것도 참 낯설다. (알고 있기는 했다.)
+    </blockquote>
+    <div class="box example07">
+      <h2 class="heading" data-en="Recruit">
+        채용 정보에 관하여
+      </h2>
+    </div>
+  </section>
+  <section>
+    <h2>08. 반투명 영문자와 대문자로 꾸미기</h2>
+    <div class="box example08">
+      <h2 class="heading" data-en="Recruit"><span>채용 정보에 관하여</span></h2>
+    </div>
+  </section>
+  <section>
+    <h2>09. 숫자와 세로 선으로 제목 꾸미기</h2>
+    <div class="box example09">
+      <h2 class="heading" data-number="01">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>10. 숫자와 가로 선으로 제목 꾸미기</h2>
+    <div class="box example10">
+      <h2 class="heading" data-number="01">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>11. 숫자와 밑줄로 제목 꾸미기</h2>
+    <blockquote>
+      em을 언제 쓸까 했는데 폰트 옆 의사 요소처럼 특정 요소의 상대 크기가 필요한 경우가 있구나 싶었다.
+    </blockquote>
+    <div class="box example11">
+      <h2 class="heading" data-number="01">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>12. 반투명 숫자와 밑줄</h2>
+    <div class="box example12">
+      <h2 class="heading" data-number="01">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>13. 대각선으로 제목 꾸미기</h2>
+    <div class="box example13">
+      <h2 class="heading">채용 정보에 관하여</h2>
+    </div>
+  </section>
+  <section>
+    <h2>14. 그물망으로 제목 꾸미기</h2>
+    <blockquote>
+      repeating을 쓰면 %에 도달하지 않으면 계속 반복하는 것 같다.
+    </blockquote>
+    <div class="box example14">
+      <div class="heading">채용 정보에 관하여</div>
+    </div>
+  </section>
+  <section>
+    <h2>15. 바느질 선으로 제목 꾸미기</h2>
+    <div class="box example15">
+      <div class="heading">채용 정보에 관하여</div>
+    </div>
+  </section>
+  <section>
+    <h2>16. 겹낫표로 제목 강조하기</h2>
+    <div class="box example16">
+      <div class="heading">채용 정보에 관하여</div>
+    </div>
+  </section>
+  <section>
+    <h2>17. 글자 테두리 선으로 제목 강조</h2>
+    <div class="box example17">
+      <div class="heading">Recruit</div>
+    </div>
+  </section>
+  <section>
+    <h2>18. 텍스트 강조 시리즈</h2>
+    <blockquote>
+      text-emphasis는 처음 알았다. (webkit 필요) <br>
+      text-decorattion의 상세 속성을 처음 알았고 아직 webkit이 필요함도 처음 알았다.
+    </blockquote>
+    <div class="box example18">
+      <p>
+        강조할 텍스트에 <br>
+        <span class="mark">마크를 붙일수도</span> <br>
+        <span class="dot">권점으로 강조해도</span> <br>
+        <span class="circle">운으로 강조해도</span> <br>
+        <span class="wave">물결로 강조해도</span> <br>
+        좋습니다.
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>19. 텍스트 줄글에 배경 넣기</h2>
+    <blockquote>
+      여기서 새로 알아낸 점은 box-decoration-break다. <br>
+      이걸 사용하면 라인마다 패딩이 적용된다.
+    </blockquote>
+    <div class="box example19">
+      <p class="emphasis">
+        메인 비주얼에<br>이용할 수 있는<br>디자인
+      </p>
+      </p>
+    </div>
+  </section>
+  <section>
+    <h2>줄 긋기</h2>
+    <blockquote>
+      호오 border로 그으면 단점이 줄바꿈시 태그를 씌워주어야 한다. <br>
+      br로 줄바꿈을 해도 줄을 그어주는 방식이다. 그냥 태그 씌워주자.
+    </blockquote>
+    <div class="box example20">
+      <p>
+        CSS로 텍스트에 노트 같은 쾌선을<br>
+        을 그릴 수 있습니다.
+      </p>
+    </div>
+  </section>
+</body>
+
+</html>

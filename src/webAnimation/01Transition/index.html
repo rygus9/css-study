@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>CSS Transition</title>
+</head>
+
+<body>
+  <div class="box"></div>
+  <img src="/images/hand.svg" alt="Hand" class="hand">
+  <object class="key" data="/images/key.svg" type="image/svg+xml"></object>
+</body>
+
+<script>
+  // transitionstart
+  // transitionend
+  // transitionrun
+  // transitioncancel
+
+  const box = document.querySelector('.box');
+
+  let isTransition = false
+
+  box.addEventListener('click', () => {
+    if (!isTransition) {
+      box.classList.toggle('box-action')
+      isTransition = true
+    }
+  })
+
+  box.addEventListener('transitionstart', (e) => {
+    console.log(`${e.propertyName} START`)
+  })
+
+  box.addEventListener('transitionend', (e) => {
+    if (e.elapsedTime === 3)
+      isTransition = false
+    console.log(`${e.propertyName} END`)
+  })
+
+  box.addEventListener('transitionrun', (e) => {
+    console.log(`${e.propertyName} RUN`)
+  })
+
+  box.addEventListener('transitioncancel', (e) => {
+    console.log(`${e.propertyName} CANCEL`)
+  })
+</script>
+
+<script>
+  const hand = document.querySelector('.hand');
+  const key = document.querySelector('.key');
+  let isKeyInHand = false
+
+  hand.addEventListener('click', () => {
+    if (isKeyInHand) {
+      key.style.transform = `scale(1) translate(0, 0)`
+      return
+    }
+    const handRect = hand.getBoundingClientRect()
+    const leftPos = handRect.left;
+    const topPos = handRect.top;
+    key.style.transform = `scale(0.5) translate(${leftPos}px, ${topPos}px)`;
+  })
+
+  key.addEventListener('transitionend', () => {
+    isKeyInHand = !isKeyInHand
+  })
+</script>
+
+</html>

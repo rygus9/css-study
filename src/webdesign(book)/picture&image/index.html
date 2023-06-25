@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Picture & Image</title>
+</head>
+
+<body>
+  <header>
+    <h1>사진과 이미지 디자인</h1>
+    <p>
+      사진이나 이미지를 웹에 그냥 업로드하자니 좀 그렇습니다. <br />
+      단순하면서도 이미지를 꾸미는 요령을 소개할까 합니다.
+    </p>
+  </header>
+  <section>
+    <h2>01. 배경색 음영 배치하기</h2>
+    <blockquote>
+      box-shadow : x-offset y-offset blur spread color <br />
+      offset의 경우 양수면 오른쪽, 아래쪽 번짐이고 blur는 흐릿한 정도 spread는
+      확산 정도입니다.
+    </blockquote>
+    <div class="box example01">
+      <img src="/images/street.jpg" alt="거리 사진" />
+    </div>
+  </section>
+  <section>
+    <h2>02. 줄무늬 음영 배치하기</h2>
+    <blockquote>
+      사진 밑에 대각선 그림자처럼 남기는 효과를 연출합니다. (z-index, 의사요소
+      사용) <br />
+      흰색 0px, 흰색 10px, 검은색 10px, 검은색 20px처럼 색 범위를 지정하면
+      그레디언트를 단색처럼 쓸 수 있다.<br />
+      img는 replacement element라 ::before 같은 pseudo-element를 못 씁니다.
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before">관련 MDN 링크</a>
+      <br />
+      background-image: repeating-linear-gradient() 공부하기
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/repeating-linear-gradient">관련 MDN 링크</a>
+    </blockquote>
+    <div class="box example02">
+      <div class="pic">
+        <img src="/images/street.jpg" alt="거리 사진" />
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>03. 점 무늬 음영 배치하기</h2>
+    <blockquote>
+      background 관련 내용 (size, position, repeat) 숙지하기 <br />
+      책에선 background-image 적용시 repeat이 적용된다고 하는데 크롬에선
+      그러지 않음 <br />
+      z-index 쓰려면 position이 설정되어야 한다. <br>
+      radial-gradient도 linear와 비슷하게 처음에 모양 정하고 이후 퍼센테이지에 정확한 색이 보장되는걸로 동작한다. <br>
+      그래서 범위로 구현하면 그레디언트없이 단색으로 처리 가능하다.
+    </blockquote>
+    <div class="box example03">
+      <div class="pic">
+        <img src="/images/street.jpg" alt="거리뷰" />
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>04. 피사체에 그림자 배치하기</h2>
+    <p>
+    <blockquote>filter: drop-shadow(offset-x offset-y blur-radius color)</blockquote>
+    </p>
+    <div class="box example04">
+      <img src="/images/horse.png" alt="말 사진" />
+    </div>
+  </section>
+  <section>
+    <h2>05. 대각선으로 이미지에 프레임 만들기</h2>
+    <blockquote>
+      border-image의 source와 slice를 이용해서 구현 가능하다. <br>
+      slice는 선을 짜르는 개념이고 width는 선 두께 개념이다. <br>
+      calc를 통해서 내가 원하는 크기를 계산해서 넣을 수 있다.
+    </blockquote>
+    <div class="example05 box">
+      <div class="pic">
+        <img src="/images/cat.webp" alt="고양이 사진">
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>06. 사진 모서리를 삼각형으로 꾸미기</h2>
+    <blockquote>
+      요소에 색을 채울 때 꼭 content를 채울 필요없다. (여기는 border 활용) <br>
+      참고로 나머지 두 대각선 채울 필요없다고 안쓰면 조그마한 사각형만 형성됩니다.
+    </blockquote>
+    <div class="box example06">
+      <div class="pic">
+        <img src="/images/cat.webp" alt="고양이">
+      </div>
+    </div>
+  </section>
+  <secion>
+    <h2>07. 사진 모서리를 액자처럼 꾸미기</h2>
+    <div class="box example07">
+      <div class="pic">
+        <img src="/images/cat.webp" alt="고양이">
+      </div>
+    </div>
+  </secion>
+  <section>
+    <h2>08. 로고의 흰 배경을 투과시키기</h2>
+    <blockquote>
+      mix-blend-mode가 뒷배경과 색을 섞는 기능 + multiple하면 흰색은 아예 사라짐 <br>
+      이게 색깔이 연할수록 투명해지는 매커니즘이라 깔끔하게 흰색만 제거하는 용도로는 쓰기 힘들듯
+    </blockquote>
+    <div class="box example08">
+      <div class="logo-background">
+        <div class="logo">
+          <img src="/images/whiteback.jpg" alt="흰색 배경">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>09. 대각선을 활용하여 필터만들기</h2>
+    <blockquote>
+      브랜드 소개 이미지, 푸터 배경에서 텍스트와의 색상 대비를 위해 필터를 두는 용도로 좋다.
+    </blockquote>
+    <div class="box example09">
+      <div class="pic">
+        <img src="/images/street.jpg" alt="거리 뷰">
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>10. 점을 활용한 사진 필터 만들기</h2>
+    <div class="box example10">
+      <div class="pic">
+        <img src="/images/street.jpg" alt="거리뷰">
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>11. 이미지 필터 사용하기</h2>
+    <blockquote>
+      blur, grayscale, sepia 등이 있고 여기서는 blur와 sepia를 썼다. <br>
+      참고로 이런건 디자인 감각있는 사람이 써야... (밑에 사진은 필터 선택이 많이 아쉽다.)
+    </blockquote>
+    <div class="box example11">
+      <img src="/images/cat.webp" alt="고양이">
+    </div>
+  </section>
+  <section>
+    <h2>12. 사진 형태를 마음대로 수정하기</h2>
+    <blockquote>
+      border-radius가 위 왼쪽부터 시계인건 알았다. <br>
+      하지만 /를 쓰면 왼쪽이 가로축, 오른쪽이 세로축인건 처음 알았다.
+    </blockquote>
+    <div class="box example12">
+      <img src="/images/cat.webp" alt="고양이">
+    </div>
+  </section>
+  <section>
+    <h2>13. 글자 모양 안에 그림 넣기</h2>
+    <blockquote>
+      prefix 안붙여도 될 줄 알았는데 붙여야 동작합니다. <br>
+      background-size의 퍼센트 단위는 부모 크기를 따라가는 것 같다.
+    </blockquote>
+    <div class="box example13">
+      <div class="backgroundclip">COFFEE</div>
+    </div>
+  </section>
+  <section>
+    <h2>마지막으로</h2>
+    <p>webp에 대한 내용이 나왔는데 어떻게 변환하는지는 생략한다. <br>
+      webp를 지원하지 않는 브라우저를 위해서 source 태그를 사용한다. </p>
+    <pre>
+&lt;picture&gt;
+  &lt;source type=&quot;image/webp&quot; srcset=&quot;image.webp&quot; /&gt;
+  &lt;img src=&quot;image.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/picture&gt;
+    </pre>
+  </section>
+</body>
+
+</html>
