@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Path</title>
+  <style>
+    .track {
+      position: relative;
+      width: 563px;
+      /* 이거 viewbox와 같은 크기여야 한다. */
+      background: #eee;
+    }
+
+    .path {
+      fill: none;
+      stroke: black;
+    }
+
+    .car {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 20px;
+      background: red;
+      offset-path: path("M74.2812 299C18.9815 229.091 -58.4381 76.3664 74.2812 24.7412C207.001 -26.884 433.106 17.571 529.569 46.2517C626.031 74.9324 372.401 235.813 372.401 235.813C362.006 216.991 353.192 170.744 401.09 136.327C448.989 101.91 380.301 61.9365 339.97 46.2517C277.186 34.6002 143.884 18.288 112.95 46.2517C82.0149 74.2154 222.302 100.028 296.312 109.439L112.95 190.103L257.644 299L562 288.245");
+      offset-distance: 100px;
+      offset-rotate: auto 90deg;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="track">
+    <div class="car"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="563" height="300" viewBox="0 0 563 300" fill="none">
+      <path
+        d="M74.2812 299C18.9815 229.091 -58.4381 76.3664 74.2812 24.7412C207.001 -26.884 433.106 17.571 529.569 46.2517C626.031 74.9324 372.401 235.813 372.401 235.813C362.006 216.991 353.192 170.744 401.09 136.327C448.989 101.91 380.301 61.9365 339.97 46.2517C277.186 34.6002 143.884 18.288 112.95 46.2517C82.0149 74.2154 222.302 100.028 296.312 109.439L112.95 190.103L257.644 299L562 288.245"
+        stroke="black" />
+    </svg>
+  </div>
+  <script>
+    const car = document.querySelector('.car')
+
+    const animation = car.animate([{ offsetDistance: "0%" }, { offsetDistance: "100%" }], { duration: 3000, iterations: Infinity })
+    animation.pause();
+
+    const track = document.querySelector('.track')
+    track.addEventListener('click', () => {
+      if (animation.playState === "paused") {
+        animation.play();
+        return
+      }
+      animation.pause();
+    })
+  </script>
+</body>
+
+</html>

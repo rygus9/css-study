@@ -1,0 +1,28 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  transition:
+    transform 3s cubic-bezier(0.56, -0.65, 0.41, 1.39),
+    background 1s linear;
+}
+
+.box-action {
+  transform: translateX(300px);
+  background: blue;
+}
+
+.key {
+  position: absolute;
+  width: 150px;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+
+.hand {
+  position: absolute;
+  width: 200px;
+  left: 400px;
+  top: 90px;
+}
